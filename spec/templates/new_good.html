@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form method="GET" action="/prices/save_good/">
+<!--
+slug = models.SlugField( unique=True, default=default_slug )
+	name = models.TextField()
+	price = models.DecimalField( max_digits = 22, decimal_places = 2 )
+	unit = models.ForeignKey( Unit )
+	cath = models.ForeignKey( Category )
+	tags = models.ManyToManyField( Tag )
+	langs = models.ManyToManyField( Lang )
+-->
+		<table>
+			<tr><td>Наименование</td>
+			<td><input type="text" name="gname"></td>
+			<tr><td>Цена</td><td><input type="text" name="gprice"></td></tr>
+			<tr><td>Единица измерения</td><td>
+				<select name="unit">
+					{% for unit in unitlist %}
+					<option value="{{unit.id}}">{{unit.name}}</option>
+					{%endfor%}
+				</select>
+			</td></tr>
+			<tr><td>Категория</td><td>
+				<select name="cat">
+					{% for cat in catlist %}
+					<option value="{{cat.slug}}">{{cat.name}}</option>
+					{%endfor%}
+				</select>
+			</td></tr>
+			<tr><td>Ключевые слова</td><td><input type="text" name="tags"></td></tr>
+			</tr>
+		</table>	
+		<input type="submit" value="Сохранить">
+	</form>
+
+</body>
+</html>

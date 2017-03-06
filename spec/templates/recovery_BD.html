@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for dev in devlist %}
+        <li><a href="/recovery/{{ dev.id }}">*{{dev.name}}</a></li>
+    {% endfor %}
+
+    <p>__________________________________________________________________</p>
+    {% for os in OS_list %}
+        <li><a href="/recovery/{{ os.id }}">*{{os.name}}</a></li>
+    {% endfor %}
+    <p>__________________________________________________________________</p>
+    {% for file in type_file_list %}
+        <li><img src="{% static 'images/{{ file.image }}' %}" alt=""><a href="/recovery/{{ file.id }}">*{{file.name}}</a></li>
+
+    {% endfor %}
+</body>
+</html>

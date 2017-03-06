@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Ключевые слова</h1>
+	<ul>
+		{% for tag in taglist %}
+			<li><a href="/prices/tag/{{tag.slug}}">{{tag.name}}</a></li>
+		{% empty %}
+			<li>Ключевых слов нет</li>
+		{% endfor %}
+	</ul>
+</body>
+</html>

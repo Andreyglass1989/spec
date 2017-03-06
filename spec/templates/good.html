@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>Товары</h1>
+	<table border="1"> 
+		{% for good	in goodlist %}
+		<tr>
+			<td><a href="/prices/good/{{good.slug}}">{{good.name}}</a></td>
+			<td>{{good.unit.name}}</td>
+			<td>{{good.price}}</td>
+		</tr>
+		{% empty %}
+			<tr><td>Товаров нет</td></tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

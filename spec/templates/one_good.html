@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> </title>
+</head>
+  <body>
+  <table border="1">
+    <tr><td>Наименование</td><td>{{good.name}}</td></tr>
+    <tr><td>Ед. изм.</td><td>{{good.unit.name}}</td></tr>
+    <tr><td>Цена</td><td>{{good.price}}</td></tr>
+    <tr><td>Категория</td><td>{{good.cath.name}}</td></tr>
+    <tr><td>Ключевые слова</td>
+      <td>
+      {% for tag in tags %}
+        {{tag.name}}
+      {% endfor %}
+      </td></tr>
+    <tr><td>Описание на яз.</td>
+      <td>
+      {% for lang in langs %}
+        {{lang.name}}
+      {% endfor %}
+      </td></tr>
+
+  </table>
+  </body>
+</html>

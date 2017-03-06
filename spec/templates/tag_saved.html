@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table border="1">
+		<tr><td>Путь</td><td>{{request.path}}</td></tr>
+		<tr><td>Полный путь</td><td>{{request.get_full_path}}</td></tr>
+		<tr><td>host</td><td>{{request.get_host}}</td></tr>
+		<tr><td>Шифорованный протокол?</td><td>{{request.is_secure}}</td></tr>
+		<tr><td>Брацзер</td><td>{{user_agent}}</td></tr>
+		<tr><td>tagname</td><td>{{tagname}}</td></tr>
+	</table>
+</body>
+</html>

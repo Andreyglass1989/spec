@@ -1,0 +1,40 @@
+<html>
+	<body>
+		<h1>{{title}}</h1>
+		<table border="1">
+		<tr>
+			<th>&nbsp;</th>
+			<th>Что</th>
+			<th>в чем</th>
+			<th>почем</th>
+		</tr>
+				{% for item in goods reversed %}
+					<tr>
+						<td>
+							{% if forloop.first %}
+								<span style="color:green">{{forloop.counter}}</span>
+								{% else %}
+									{% if forloop.last %}
+										<span style="color:red">{{forloop.counter}}</span>
+									{% else %}
+										{{forloop.counter}}.
+								{% endif %}
+							{% endif %}
+						</td>
+						<td>{{item.name}}</td>
+						<td>
+						{% ifequal item.unit 'шт' %}
+							<span style="color:blue">{{item.unit}}</span>
+						{% else %}
+							{{item.unit}}
+						{% endifequal %}
+						</td>
+				 		<td>{{item.price}}</td>
+					</tr>
+				{% empty %}
+					<tr><td colspan="4">oops!</td></tr>
+				{% endfor %}
+				<img src="images/telefon.png" alt="" width="45" height="39"/>
+		</table>
+	</body>
+</html>
