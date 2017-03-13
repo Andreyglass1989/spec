@@ -27,7 +27,7 @@ SECRET_KEY = '$_jsi79&k+4q#0r^ta7p7i@_1e_-4(8n$0kfe#ur^cep$%ykxb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
  
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['195.64.154.124', 'yakovchukandreypybursa5.dp.ua']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'Hello_world',
     'prices',
     'recovery_info',
+    '',
 ]
 
 MIDDLEWARE = [
